@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Talk Talk - Chat em Tempo Real!</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js" integrity="sha512-iqRVtNB+t9O+epcgUTIPF+nklypcR23H1yR1NFM9kffn6/iBhZ9bTB6oKLaGMv8JE9UgjcwfBFg/eHC/VMws+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/tippy-bundle.umd.min.js" integrity="sha512-gbruucq/Opx9jlHfqqZeAg2LNK3Y4BbpXHKDhRC88/tARL/izPOE4Zt2w6X9Sn1UeWaGbL38zW7nkL2jdn5JIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.8/sweetalert2.min.js" integrity="sha512-7x7HoEikRZhV0FAORWP+hrUzl75JW/uLHBbg2kHnPdFmScpIeHY0ieUVSacjusrKrlA/RsA2tDOBvisFmKc3xw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.8/sweetalert2.min.css" integrity="sha512-y4S4cBeErz9ykN3iwUC4kmP/Ca+zd8n8FDzlVbq5Nr73gn1VBXZhpriQ7avR+8fQLpyq4izWm0b8s6q4Vedb9w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="themes.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <form id="chat" action="POST">
+        <header class="chat--title">
+            <div class="chat--title-items">
+                <div class="items--left">
+                    <span>Talk Talk <i class="fa fa-hand-scissors-o" aria-hidden="true"></i></span>
+                    <h5 class="chat--subtitle">Chat em tempo real!</h5>
+                </div>
+                <div class="items--right">
+                    <i class="fa fa-sun-o icon--lightmode" aria-hidden="true" onclick="setTheme('lightmode')"></i>
+                    &nbsp;<i class="fa fa-moon-o icon--darkmode" aria-hidden="true" onclick="setTheme('darkmode')"></i>
+                    <h5 class="icons--subtitle">Tente <a href="" target="_blank">abrir em mais uma janela</a> ou <a id="sharelink">compartilhe o link</a>!</h5>
+                </div>
+            </div>
+        </header>
+        <input class="input--text" type="text" name="username" placeholder="Digite seu usuário" required>
+        <div class="messages">
+            <span class="messages--title">Conversa iniciada...</span>
+        </div>
+        <input class="input--text" type="text" name="message" placeholder="Conversar no chat" required>
+        <button class="btn--submit" type="submit">Enviar <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+        <span class="chat--subtitle-footer">As mensagens são excluídas automaticamente após 20 minutos :)</span>
+    </form>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
