@@ -65,6 +65,19 @@ body{
     font-weight: 600;
 }
 
+#chat .items--right .icon--lightmode,.icon--darkmode{
+    transition: transform 10ms;
+}
+
+#chat .items--right .icon--lightmode:hover,.icon--darkmode:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#chat .items--right .icon--lightmode:active,.icon--darkmode:active{
+    cursor: default;
+}
+
 #chat .chat--subtitle-footer{
     font-size: 12px;
     text-align: right;
