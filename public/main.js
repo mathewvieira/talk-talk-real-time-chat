@@ -6,8 +6,8 @@ const setTheme = function(theme){
         
 function renderMessage(message) {
     var randomColor = getUniqueRandomColor(escapeHtml(message.author));
-    $('.messages').append(`
-        <div class="messages--single">
+    $('.chat--messages').append(`
+        <div class="chat--messages-single">
             <strong> [`+ escapeHtml(message.dateTime) +`] <span style='background-color: ${randomColor};'>`+ escapeHtml(message.author) +`</span></strong>: `+ escapeHtml(message.message) +`
         </div>
     `);
@@ -88,13 +88,13 @@ socket.on('receivedMessage', function(message) {
 
 socket.on('previousMessages', function(messages) {
     for (message of messages) {
-        renderMessage(message);      
+        renderMessage(message);
     }
-    scrollDivBottom($('.messages'));
+    scrollDivBottom($('.chat--messages'));
 });
 
 socket.on('autoDeleteMessages', function () {
-    removeAllMessages($('#chat'), $('.messages--single'));
+    removeAllMessages($('#chat'), $('.chat--messages-single'));
 });
 
 socket.on('authorAlreadyInUse', function () {
@@ -134,7 +134,7 @@ $('#chat').submit(function(event) {
         renderMessage(messageObject);
         socket.emit('sendMessage', messageObject);
 
-        scrollDivBottom($('.messages'));
+        scrollDivBottom($('.chat--messages'));
         $('input[name=message').val('');
     }
 });

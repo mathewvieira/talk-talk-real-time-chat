@@ -1,0 +1,149 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#chat{
+    margin: 20px;
+    margin-top: 15px;
+    height: 620px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    & > * {
+        width: 65%;
+        padding: 15px;
+        margin: 5px;
+    }
+
+    & > input[type='text']{
+        border-radius: 3.5px;    
+    }
+
+    .chat--title{
+        font-size: 22px;
+        padding: 0;
+       
+        .chat--title-items{
+            display: flex;
+            align-items: center;
+            height: 40px;
+            margin-bottom: 10px;
+
+            .items--left{
+                width: 50%;
+                text-align: left;
+
+                .items--left-call{
+                    padding: 0;
+                    margin: 0;
+                    font-size: 14px;
+                    letter-spacing: 0.1px;
+                    font-weight: 500;
+                }
+            }
+
+            .items--right{
+                width: 50%;
+                text-align: right;
+
+                .items--right-interaction{
+                    font-size: 9.5px;
+                    margin: 0;
+                    padding: 0;
+                    padding-top: 5px;
+                    font-weight: 600;
+                }
+                
+                .items--right-lightmode,.items--right-darkmode{
+                    transition: transform 10ms;
+
+                    &:hover{
+                        transform: scale(1.1);
+                        cursor: pointer;
+                    }
+
+                    &:active{
+                        cursor: default;
+                    }
+                }              
+            }
+        }
+    }
+
+    .chat--messages{
+        flex-grow: 1;
+        overflow-y: auto;
+        font-size: 14px;
+        border-radius: 3.5px;     
+        
+		& > * {
+            margin: 0;
+        }
+
+        .chat--messages-title{
+            margin: 0;
+            font-size: 10px;
+        }
+
+        .chat--messages-single{
+            margin: 10px;
+            & > strong{
+                margin: 0;
+            }
+			span{
+                padding: 1px 5px; 
+                border-radius: 3.5px;
+            }           
+        }
+    }
+
+    .chat--btn-submit {
+        border-radius: 3.5px;
+    }
+
+    .chat--footer{
+        font-size: 12px;
+        text-align: right;
+        margin: 0;
+        padding: 0;
+        padding-top: 15px;
+    }
+}
+
+.tippy-tooltip {
+	font-size: 1px !important;
+}
+
+// TODO: Refatorar
+@media screen and (max-width: 700px) {
+    #chat .chat--title .chat--title-items{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 110px;
+    }
+    
+    #chat .chat--title .chat--title-items .items--left{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+    
+    #chat .chat--title .chat--title-items .items--right{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #chat .chat--title .chat--title-items .items--right .items--right-interaction{
+        line-height: 15px;
+    } 
+}

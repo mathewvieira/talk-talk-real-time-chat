@@ -1,138 +1,111 @@
 :root,
 :root.darkmode {
-    --bg-color-icon-lightmode: #d4d41a;
-    --bg-color-icon-darkmode: #3a3ae6;
-    
-    --bg-color: #181818;
-    --bg-color-input: #0A0A0A;
-    --text-color: #ffffff;
-    
-    --bg-color-btn-submit: #212121;
-    --bg-color-btn-submit-hover: #131313;
-    --bg-color-btn-submit-focus: #0a0a0a;
-    
-    --text-shadow-color: #1b1b1b;
-    
-    --text-color-messages-title: #b3b3b3;
-    
-    --text-color-icons-subtitle: #505050;
-    --text-color-icons-subtitle-link: #9e9e9e;
-    --text-color-icons-subtitle-link-hover: #8a8a8a;
-    
-    --text-color-chat-subtitle: #505050;
-    --text-color-chat-subtitle-footer: #555555;
-
-    --bg-color-scrollbar: #212121;
-    --bg-color-scrollbar-thumb: #dadada80;
+  --bg-color-icon-lightmode: #d4d41a;
+  --bg-color-icon-darkmode: #3a3ae6;
+  --bg-color: #181818;
+  --bg-color-input: #0A0A0A;
+  --text-color: #ffffff;
+  --bg-color-btn-submit: #212121;
+  --bg-color-btn-submit-hover: #131313;
+  --bg-color-btn-submit-focus: #0a0a0a;
+  --text-shadow-color: #1b1b1b;
+  --text-color-messages-title: #b3b3b3;
+  --text-color-icons-subtitle: #505050;
+  --text-color-icons-subtitle-link: #9e9e9e;
+  --text-color-icons-subtitle-link-hover: #8a8a8a;
+  --text-color-chat-subtitle: #505050;
+  --text-color-chat-subtitle-footer: #555555;
+  --bg-color-scrollbar: #212121;
+  --bg-color-scrollbar-thumb: #dadada80;
 }
 
 :root.lightmode {
-    --bg-color-icon-lightmode: #f5a510;
-    
-    --bg-color: #fcfcfc;
-    --bg-color-input: #d4d4d4;
-    --text-color: #3b3b3b;
-
-    --bg-color-btn-submit: #b3b3b3;
-    --bg-color-btn-submit-hover: #cecece;
-    --bg-color-btn-submit-focus: #aaaaaa;
-
-    --text-shadow-color: #1b1b1b;
-    
-    --text-color-messages-title: #747474;
-    
-    --text-color-icons-subtitle: #9e9e9e;
-    --text-color-icons-subtitle-link: #4d4d4d;
-    --text-color-icons-subtitle-link-hover: #747474;
-    
-    --text-color-chat-subtitle: #969696;
-    --text-color-chat-subtitle-footer: #1f1f1f;
-
-    --bg-color-scrollbar: #212121;
-    --bg-color-scrollbar-thumb: #dadada80;
-
-    --text-color-span-username: #ffffff;
-    --text-color-messages-single: #555555;
-    --text-color-btn-submit: #3b3b3b;
+  --bg-color-icon-lightmode: #f5a510;
+  --bg-color: #fcfcfc;
+  --bg-color-input: #d4d4d4;
+  --text-color: #3b3b3b;
+  --bg-color-btn-submit: #b3b3b3;
+  --bg-color-btn-submit-hover: #cecece;
+  --bg-color-btn-submit-focus: #aaaaaa;
+  --text-shadow-color: #1b1b1b;
+  --text-color-messages-title: #747474;
+  --text-color-icons-subtitle: #9e9e9e;
+  --text-color-icons-subtitle-link: #4d4d4d;
+  --text-color-icons-subtitle-link-hover: #747474;
+  --text-color-chat-subtitle: #969696;
+  --text-color-chat-subtitle-footer: #1f1f1f;
+  --bg-color-scrollbar: #212121;
+  --bg-color-scrollbar-thumb: #dadada80;
+  --text-color-span-username: #ffffff;
+  --text-color-messages-single: #555555;
+  --text-color-btn-submit: #3b3b3b;
 }
 
-body{
-    background-color: var(--bg-color);
-    color: var(--text-color);
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
-.messages, .input--text{
-    background-color: var(--bg-color-input);
-    color: var(--text-color);
-    border: none;
+#chat .chat--messages, #chat .chat--input-text {
+  background-color: var(--bg-color-input);
+  color: var(--text-color);
+  border: none;
 }
-
-.btn--submit{
-    background-color: var(--bg-color-btn-submit);
-    color: var(--text-color-btn-submit);
-    border: none;
+#chat .chat--btn-submit {
+  background-color: var(--bg-color-btn-submit);
+  color: var(--text-color-btn-submit);
+  border: none;
 }
-
-.btn--submit:hover{
-    background-color: var(--bg-color-btn-submit-hover);
-    cursor: pointer;
+#chat .chat--btn-submit:hover {
+  background-color: var(--bg-color-btn-submit-hover);
+  cursor: pointer;
 }
-
-.btn--submit:focus{
-    background-color: var(--bg-color-btn-submit-focus);
-    cursor: crosshair;
+#chat .chat--btn-submit:focus {
+  background-color: var(--bg-color-btn-submit-focus);
+  cursor: crosshair;
 }
-
-.messages--title{
-    color: var(--text-color-messages-title);
+#chat .chat--messages-title {
+  color: var(--text-color-messages-title);
 }
-
-.chat--subtitle{
-    color: var(--text-color-chat-subtitle);
+#chat .chat--footer {
+  color: var(--text-color-chat-subtitle-footer);
 }
-
-.icons--subtitle{
-    color: var(--text-color-icons-subtitle);
+#chat .chat--messages-single {
+  color: var(--text-color-messages-single);
 }
-
-.icons--subtitle a{
-    color: var(--text-color-icons-subtitle-link);
-    cursor: pointer;
-    text-decoration: none;
+#chat .chat--messages-single span {
+  text-shadow: 0.7px 0.7px var(--text-shadow-color);
+  color: var(--text-color-span-username);
 }
-
-.icons--subtitle a:hover{
-    color: var(--text-color-icons-subtitle-link-hover);
+#chat .items--right-lightmode {
+  color: var(--bg-color-icon-lightmode);
 }
-
-.chat--subtitle-footer{
-    color: var(--text-color-chat-subtitle-footer);
+#chat .items--right-darkmode {
+  color: var(--bg-color-icon-darkmode);
 }
-
-.messages--single span{
-    text-shadow: 0.7px 0.7px var(--text-shadow-color);
-    color: var(--text-color-span-username);
+#chat .items--left-call {
+  color: var(--text-color-chat-subtitle);
 }
-
-.messages--single{
-    color: var(--text-color-messages-single);
+#chat .items--right-interaction {
+  color: var(--text-color-icons-subtitle);
 }
-
-.icon--lightmode{
-    color: var(--bg-color-icon-lightmode);
+#chat .items--right-interaction a {
+  color: var(--text-color-icons-subtitle-link);
+  cursor: pointer;
+  text-decoration: none;
 }
-
-.icon--darkmode{
-    color: var(--bg-color-icon-darkmode);
+#chat .items--right-interaction a:hover {
+  color: var(--text-color-icons-subtitle-link-hover);
 }
 
 ::-webkit-scrollbar {
-    background-color: var(--bg-color-scrollbar);
-    -webkit-appearance: none;
-    border-radius: 3.5px;
-    width: 7.5px;
+  background-color: var(--bg-color-scrollbar);
+  -webkit-appearance: none;
+  border-radius: 3.5px;
+  width: 7.5px;
 }
+
 ::-webkit-scrollbar-thumb {
-    background-color: var(--bg-color-scrollbar-thumb);
-    border-radius: 3.5px;
-}
+  background-color: var(--bg-color-scrollbar-thumb);
+  border-radius: 3.5px;
+}/*# sourceMappingURL=themes.css.map */

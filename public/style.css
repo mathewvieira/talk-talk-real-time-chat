@@ -1,145 +1,128 @@
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-*{
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+* {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#chat{
-    margin: 20px;
-    margin-top: 15px;
-    height: 620px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+#chat {
+  margin: 20px;
+  margin-top: 15px;
+  height: 620px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-
-#chat > *{
-    width: 100%;
-    padding: 15px;
-    margin: 5px;
+#chat > * {
+  width: 65%;
+  padding: 15px;
+  margin: 5px;
 }
-
-#chat > input[type='text'], .messages, .btn--submit {
-    border-radius: 3.5px;
+#chat > input[type=text] {
+  border-radius: 3.5px;
 }
-
-#chat .chat--title{
-    font-size: 22px;
-    padding: 0;
+#chat .chat--title {
+  font-size: 22px;
+  padding: 0;
 }
-
-#chat .chat--title .chat--title-items{
-    display: flex;
-    align-items: center;
-    height: 40px;
-    margin-bottom: 10px;
+#chat .chat--title .chat--title-items {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin-bottom: 10px;
 }
-
-#chat .chat--title .chat--title-items .items--left{
-    width: 50%;
-    text-align: left;
+#chat .chat--title .chat--title-items .items--left {
+  width: 50%;
+  text-align: left;
 }
-
-#chat .chat--title .chat--title-items .items--right{
-    width: 50%;
-    text-align: right;
+#chat .chat--title .chat--title-items .items--left .items--left-call {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  font-weight: 500;
 }
-
-#chat .chat--subtitle{
-    padding: 0;
-    margin: 0;
-    font-size: 14px;
-    letter-spacing: 0.1px;
-    font-weight: 500;
+#chat .chat--title .chat--title-items .items--right {
+  width: 50%;
+  text-align: right;
 }
-
-#chat .icons--subtitle{
-    font-size: 9.5px;
-    margin: 0;
-    padding: 0;
-    padding-top: 5px;
-    font-weight: 600;
+#chat .chat--title .chat--title-items .items--right .items--right-interaction {
+  font-size: 9.5px;
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+  font-weight: 600;
 }
-
-#chat .items--right .icon--lightmode,.icon--darkmode{
-    transition: transform 10ms;
+#chat .chat--title .chat--title-items .items--right .items--right-lightmode, #chat .chat--title .chat--title-items .items--right .items--right-darkmode {
+  transition: transform 10ms;
 }
-
-#chat .items--right .icon--lightmode:hover,.icon--darkmode:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+#chat .chat--title .chat--title-items .items--right .items--right-lightmode:hover, #chat .chat--title .chat--title-items .items--right .items--right-darkmode:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
-
-#chat .items--right .icon--lightmode:active,.icon--darkmode:active{
-    cursor: default;
+#chat .chat--title .chat--title-items .items--right .items--right-lightmode:active, #chat .chat--title .chat--title-items .items--right .items--right-darkmode:active {
+  cursor: default;
 }
-
-#chat .chat--subtitle-footer{
-    font-size: 12px;
-    text-align: right;
-    margin: 0;
-    padding: 0;
-    padding-top: 15px;
+#chat .chat--messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  font-size: 14px;
+  border-radius: 3.5px;
 }
-
-#chat .messages{
-    flex-grow: 1;
-    overflow-y: auto;
-    font-size: 14px;
+#chat .chat--messages > * {
+  margin: 0;
 }
-
-#chat .messages > *{
-    margin: 0;
+#chat .chat--messages .chat--messages-title {
+  margin: 0;
+  font-size: 10px;
 }
-
-#chat .messages .messages--title{
-    margin: 0;
-    font-size: 10px;
+#chat .chat--messages .chat--messages-single {
+  margin: 10px;
 }
-
-#chat .messages .messages--single{
-    margin: 10px;
+#chat .chat--messages .chat--messages-single > strong {
+  margin: 0;
 }
-
-#chat .messages .messages--single span{
-    padding: 1px 5px; 
-    border-radius: 3.5px;
+#chat .chat--messages .chat--messages-single span {
+  padding: 1px 5px;
+  border-radius: 3.5px;
 }
-
-#chat .messages .messages--single > strong{
-    margin: 0;
+#chat .chat--btn-submit {
+  border-radius: 3.5px;
+}
+#chat .chat--footer {
+  font-size: 12px;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  padding-top: 15px;
 }
 
 .tippy-tooltip {
-    font-size: 1px !important;
+  font-size: 1px !important;
 }
 
 @media screen and (max-width: 700px) {
-    #chat .chat--title .chat--title-items{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        padding-bottom: 110px;
-    }
-    
-    #chat .chat--title .chat--title-items .items--left{
-        width: 100%;
-        text-align: center;
-        margin-bottom: 12px;
-    }
-    
-    #chat .chat--title .chat--title-items .items--right{
-        width: 100%;
-        text-align: center;
-    }
+  #chat .chat--title .chat--title-items {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 110px;
+  }
+  #chat .chat--title .chat--title-items .items--left {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  #chat .chat--title .chat--title-items .items--right {
+    width: 100%;
+    text-align: center;
+  }
 }
-
 @media screen and (max-width: 350px) {
-    #chat .chat--title .chat--title-items .items--right .icons--subtitle{
-        line-height: 15px;
-    } 
-} 
+  #chat .chat--title .chat--title-items .items--right .items--right-interaction {
+    line-height: 15px;
+  }
+}/*# sourceMappingURL=style.css.map */
