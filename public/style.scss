@@ -10,7 +10,7 @@ body{
 
 #chat{
     margin: 20px;
-    margin-top: 15px;
+    margin-top: 35px;
     height: 620px;
     display: flex;
     align-items: center;
@@ -23,12 +23,12 @@ body{
     }
 
     & > input[type='text']{
-        border-radius: 3.5px;    
+        border-radius: 3.5px;
     }
 
     .chat--title{
-        font-size: 22px;
         padding: 0;
+        font-size: 22px;
        
         .chat--title-items{
             display: flex;
@@ -54,10 +54,9 @@ body{
                 text-align: right;
 
                 .items--right-interaction{
-                    font-size: 9.5px;
                     margin: 0;
-                    padding: 0;
-                    padding-top: 5px;
+                    padding: 5px 0 0 0;
+                    font-size: 9.5px; 
                     font-weight: 600;
                 }
                 
@@ -78,14 +77,12 @@ body{
     }
 
     .chat--messages{
-        flex-grow: 1;
-        overflow-y: auto;
+        flex-grow: 1;  
         font-size: 14px;
-        border-radius: 3.5px;     
-        
-		& > * {
-            margin: 0;
-        }
+        border-radius: 3.5px; 
+        overflow-y: auto;    
+        overflow-x: hidden;
+        overflow-wrap: break-word;
 
         .chat--messages-title{
             margin: 0;
@@ -94,9 +91,11 @@ body{
 
         .chat--messages-single{
             margin: 10px;
+            
             & > strong{
                 margin: 0;
             }
+
 			span{
                 padding: 1px 5px; 
                 border-radius: 3.5px;
@@ -109,10 +108,10 @@ body{
     }
 
     .chat--footer{
-        font-size: 12px;
-        text-align: right;
         margin: 0;
         padding: 0;
+        font-size: 12px;
+        text-align: right;        
         padding-top: 15px;
     }
 }
@@ -121,29 +120,64 @@ body{
 	font-size: 1px !important;
 }
 
-// TODO: Refatorar
 @media screen and (max-width: 700px) {
-    #chat .chat--title .chat--title-items{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        padding-bottom: 110px;
-    }
+    #chat{
+        & > * {
+            width: 100%;
+        }
+
+        .chat--messages{
+            .chat--messages-title{
+                font-size: 10px;
+            }
     
-    #chat .chat--title .chat--title-items .items--left{
-        width: 100%;
-        text-align: center;
-        margin-bottom: 12px;
-    }
-    
-    #chat .chat--title .chat--title-items .items--right{
-        width: 100%;
-        text-align: center;
+            .chat--messages-single{
+                font-size: 12px;          
+            }
+        }
+
+        .chat--title{
+            .chat--title-items{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding-bottom: 110px;
+                
+                .items--left{
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 12px;
+                }
+
+                .items--right{
+                    width: 100%;
+                    text-align: center;
+
+                    .items--right-interaction{
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
     }
 }
 
 @media screen and (max-width: 350px) {
-    #chat .chat--title .chat--title-items .items--right .items--right-interaction{
-        line-height: 15px;
-    } 
+    #chat{
+        & > * {
+            width: 100%;
+        }
+
+        .chat--title{
+            .chat--title-items{
+                margin-bottom: 35px;
+                
+                .items--right{          
+                    .items--right-interaction{
+                        line-height: 25px;
+                    }
+                }
+            }
+        }
+    }
 }

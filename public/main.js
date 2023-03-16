@@ -93,11 +93,11 @@ socket.on('previousMessages', function(messages) {
     scrollDivBottom($('.chat--messages'));
 });
 
-socket.on('autoDeleteMessages', function () {
+socket.on('autoDeleteMessages', () => {
     removeAllMessages($('#chat'), $('.chat--messages-single'));
 });
 
-socket.on('authorAlreadyInUse', function () {
+socket.on('authorAlreadyInUse', () => {
     Swal.fire(
         'Opa!',
         'Usuário já está em uso no chat.',
@@ -106,7 +106,11 @@ socket.on('authorAlreadyInUse', function () {
     $('input[name=username').val('');
 });
 
-$('input[name=username]').change(function(){
+socket.on('blockUsernameChange', () => {
+    $('input[name=username]').prop( "disabled", true);
+});
+
+$('input[name=username]').change(() => {
     var author = $('input[name=username]').val();
     
     if (author.length) {
@@ -115,6 +119,13 @@ $('input[name=username]').change(function(){
             id: socket.id,
         };
         socket.emit('sendAuthor', authorObject);
+    }
+});
+
+$('#chat').keypress(function(event) {
+    var key = event.which;
+    if(key == 13){
+       return false;
     }
 });
 

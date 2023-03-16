@@ -10,7 +10,7 @@ body {
 
 #chat {
   margin: 20px;
-  margin-top: 15px;
+  margin-top: 35px;
   height: 620px;
   display: flex;
   align-items: center;
@@ -25,8 +25,8 @@ body {
   border-radius: 3.5px;
 }
 #chat .chat--title {
-  font-size: 22px;
   padding: 0;
+  font-size: 22px;
 }
 #chat .chat--title .chat--title-items {
   display: flex;
@@ -50,10 +50,9 @@ body {
   text-align: right;
 }
 #chat .chat--title .chat--title-items .items--right .items--right-interaction {
-  font-size: 9.5px;
   margin: 0;
-  padding: 0;
-  padding-top: 5px;
+  padding: 5px 0 0 0;
+  font-size: 9.5px;
   font-weight: 600;
 }
 #chat .chat--title .chat--title-items .items--right .items--right-lightmode, #chat .chat--title .chat--title-items .items--right .items--right-darkmode {
@@ -68,12 +67,11 @@ body {
 }
 #chat .chat--messages {
   flex-grow: 1;
-  overflow-y: auto;
   font-size: 14px;
   border-radius: 3.5px;
-}
-#chat .chat--messages > * {
-  margin: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
 }
 #chat .chat--messages .chat--messages-title {
   margin: 0;
@@ -93,10 +91,10 @@ body {
   border-radius: 3.5px;
 }
 #chat .chat--footer {
-  font-size: 12px;
-  text-align: right;
   margin: 0;
   padding: 0;
+  font-size: 12px;
+  text-align: right;
   padding-top: 15px;
 }
 
@@ -105,6 +103,15 @@ body {
 }
 
 @media screen and (max-width: 700px) {
+  #chat > * {
+    width: 100%;
+  }
+  #chat .chat--messages .chat--messages-title {
+    font-size: 10px;
+  }
+  #chat .chat--messages .chat--messages-single {
+    font-size: 12px;
+  }
   #chat .chat--title .chat--title-items {
     display: flex;
     align-items: center;
@@ -120,9 +127,18 @@ body {
     width: 100%;
     text-align: center;
   }
+  #chat .chat--title .chat--title-items .items--right .items--right-interaction {
+    line-height: 30px;
+  }
 }
 @media screen and (max-width: 350px) {
+  #chat > * {
+    width: 100%;
+  }
+  #chat .chat--title .chat--title-items {
+    margin-bottom: 35px;
+  }
   #chat .chat--title .chat--title-items .items--right .items--right-interaction {
-    line-height: 15px;
+    line-height: 25px;
   }
 }/*# sourceMappingURL=style.css.map */

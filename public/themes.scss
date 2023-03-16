@@ -1,141 +1,125 @@
-// TODO: Refatorar nome das cores, diminuir quantidade de cores
-
 :root,
 :root.darkmode {
-    --bg-color-icon-lightmode: #d4d41a;
-    --bg-color-icon-darkmode: #3a3ae6;
+    --bg-icon-lightmode: #d4d41a;
+    --bg-icon-darkmode:  #3a3ae6;
     
-    --bg-color: #181818;
-    --bg-color-input: #0A0A0A;
-    --text-color: #ffffff;
+    --bg:                  #181818;
+    --bg-input:            #0A0A0A;
+    --bg-btn-submit:       #212121;
+    --bg-btn-submit-hover: #131313;
+    --bg-btn-submit-focus: #0A0A0A;
+    --bg-scrollbar:        #3e3e3e;
+    --bg-scrollbar-thumb:  #838383;
     
-    --bg-color-btn-submit: #212121;
-    --bg-color-btn-submit-hover: #131313;
-    --bg-color-btn-submit-focus: #0a0a0a;
-    
-    --text-shadow-color: #1b1b1b;
-    
-    --text-color-messages-title: #b3b3b3;
-    
-    --text-color-icons-subtitle: #505050;
-    --text-color-icons-subtitle-link: #9e9e9e;
-    --text-color-icons-subtitle-link-hover: #8a8a8a;
-    
-    --text-color-chat-subtitle: #505050;
-    --text-color-chat-subtitle-footer: #555555;
-
-    --bg-color-scrollbar: #212121;
-    --bg-color-scrollbar-thumb: #dadada80;
+    --text:            #ffffff;
+    --text-secondary:  #6c6c6c;
+    --text-shadow:     #1b1b1b;
+    --text-link-hover: #8a8a8a;
+    --text-username:   #ffffff;
 }
 
-:root.lightmode {
-    --bg-color-icon-lightmode: #f5a510;
+:root.lightmode{
+    --bg-icon-lightmode: #f5a510;
     
-    --bg-color: #fcfcfc;
-    --bg-color-input: #d4d4d4;
-    --text-color: #3b3b3b;
-
-    --bg-color-btn-submit: #b3b3b3;
-    --bg-color-btn-submit-hover: #cecece;
-    --bg-color-btn-submit-focus: #aaaaaa;
-
-    --text-shadow-color: #1b1b1b;
-    
-    --text-color-messages-title: #747474;
-    
-    --text-color-icons-subtitle: #9e9e9e;
-    --text-color-icons-subtitle-link: #4d4d4d;
-    --text-color-icons-subtitle-link-hover: #747474;
-    
-    --text-color-chat-subtitle: #969696;
-    --text-color-chat-subtitle-footer: #1f1f1f;
-
-    --bg-color-scrollbar: #212121;
-    --bg-color-scrollbar-thumb: #dadada80;
-
-    --text-color-span-username: #ffffff;
-    --text-color-messages-single: #555555;
-    --text-color-btn-submit: #3b3b3b;
+    --bg:                  #fcfcfc;
+    --bg-input:            #d4d4d4; 
+    --bg-btn-submit:       #b3b3b3;
+    --bg-btn-submit-hover: #cecece;
+    --bg-btn-submit-focus: #d4d4d4; 
+    --bg-scrollbar:        #212121;
+    --bg-scrollbar-thumb:  #a9a9a9;
+      
+    --text:            #3b3b3b;
+    --text-secondary:  #1b1b1b;
+    --text-shadow:     #1b1b1b; 
+    --text-link-hover: #a1a1a1;
+    --text-username:   #ffffff;
 }
 
 body{
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: var(--bg);
+    color: var(--text);
 }
 
-#chat {
+#chat{
+    & > input[type='text']:disabled{
+        color: var(--text-secondary);
+        cursor: no-drop;
+    }
+    
     .chat--messages, .chat--input-text{
-        background-color: var(--bg-color-input);
-        color: var(--text-color);
+        background-color: var(--bg-input);
+        color: var(--text);
         border: none;
     }
     
     .chat--btn-submit{
-        background-color: var(--bg-color-btn-submit);
-        color: var(--text-color-btn-submit);
+        background-color: var(--bg-btn-submit);
+        color: var(--text);
         border: none;
 
         &:hover{
-            background-color: var(--bg-color-btn-submit-hover);
+            background-color: var(--bg-btn-submit-hover);
             cursor: pointer;
         }
 
         &:focus{
-            background-color: var(--bg-color-btn-submit-focus);
+            background-color: var(--bg-btn-submit-focus);
             cursor: crosshair;
         }
     }
     
     .chat--messages-title{
-        color: var(--text-color-messages-title);
+        color: var(--text-secondary);
     }
     
     .chat--footer{
-        color: var(--text-color-chat-subtitle-footer);
+        color: var(--text-secondary);
     }
     
     .chat--messages-single{
-        color: var(--text-color-messages-single);
+        color: var(--text);
 
         span{
-            text-shadow: 0.7px 0.7px var(--text-shadow-color);
-            color: var(--text-color-span-username);
+            text-shadow: 0.7px 0.7px var(--text-shadow);
+            color: var(--text-username);
         }
     }
     
     .items--right-lightmode{
-        color: var(--bg-color-icon-lightmode);
+        color: var(--bg-icon-lightmode);
     }
     
     .items--right-darkmode{
-        color: var(--bg-color-icon-darkmode);
+        color: var(--bg-icon-darkmode);
     }
 
     .items--left-call{
-        color: var(--text-color-chat-subtitle);
+        color: var(--text-secondary);
     }
     
     .items--right-interaction{
-        color: var(--text-color-icons-subtitle);
+        color: var(--text-secondary);
 
         a{
-            color: var(--text-color-icons-subtitle-link);
+            color: var(--text);
             cursor: pointer;
             text-decoration: none;
 
             &:hover{
-                color: var(--text-color-icons-subtitle-link-hover);
+                color: var(--text-link-hover);
             }
         }
     }
 }
 
-::-webkit-scrollbar {
-    background-color: var(--bg-color-scrollbar);
+::-webkit-scrollbar{
+    background-color: var(--bg-scrollbar);
     border-radius: 3.5px;
     width: 7.5px;
+    height: 7.5px;
 }
-::-webkit-scrollbar-thumb {
-    background-color: var(--bg-color-scrollbar-thumb);
+::-webkit-scrollbar-thumb{
+    background-color: var(--bg-scrollbar-thumb);
     border-radius: 3.5px;
 }
