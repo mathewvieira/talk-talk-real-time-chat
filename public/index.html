@@ -29,7 +29,7 @@
                 <div class="items--right">
                     <i class="fa fa-sun-o items--right-lightmode" aria-hidden="true" onclick="setTheme('lightmode')"></i>&nbsp;
                     <i class="fa fa-moon-o items--right-darkmode" aria-hidden="true" onclick="setTheme('darkmode')"></i>
-                    <h5 class="items--right-interaction">Tente <a href="" target="_blank">abrir em mais uma janela</a> ou <a id="sharelink">compartilhe o link</a>!</h5>
+                    <h5 class="items--right-interaction"><span>Tente </span> <a href="" target="_blank">abrir em mais uma janela</a> <span>ou</span> <a id="sharelink">compartilhe o link!</a></h5>
                 </div>
             </div>
         </header>
@@ -37,13 +37,15 @@
         <input class="chat--input-text" type="text" name="username" placeholder="Digite seu usuário" required>
         
         <div class="chat--messages">
-            <span class="chat--messages-title">Conversa iniciada...</span>
+            <span class="chat--messages-title">Conversa iniciada<span class="title--dots"></span></span>
         </div>
         
         <input class="chat--input-text" type="text" name="message" placeholder="Conversar no chat" required>
         
-        <button class="chat--btn-submit" type="submit">Enviar <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+        <div class="chat--suggestions"></div>
         
+        <button class="chat--btn-submit" type="submit">Enviar <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+
         <span class="chat--footer">As mensagens são excluídas automaticamente após 20 minutos :)</span>
     </form>
     <script type="text/javascript" src="main.js"></script>

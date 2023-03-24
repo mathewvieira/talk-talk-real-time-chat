@@ -36,6 +36,16 @@ body {
   background-color: var(--bg);
   color: var(--text);
 }
+body::-webkit-scrollbar {
+  background-color: var(--bg-scrollbar);
+  border-radius: 3.5px;
+  width: 7.5px;
+  height: 7.5px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--bg-scrollbar-thumb);
+  border-radius: 3.5px;
+}
 
 #chat > input[type=text]:disabled {
   color: var(--text-secondary);
@@ -91,16 +101,4 @@ body {
 }
 #chat .items--right-interaction a:hover {
   color: var(--text-link-hover);
-}
-
-::-webkit-scrollbar {
-  background-color: var(--bg-scrollbar);
-  border-radius: 3.5px;
-  width: 7.5px;
-  height: 7.5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--bg-scrollbar-thumb);
-  border-radius: 3.5px;
 }/*# sourceMappingURL=themes.css.map */

@@ -53,6 +53,9 @@ body {
   margin: 0;
   padding: 5px 0 0 0;
   font-size: 9.5px;
+  font-weight: 500;
+}
+#chat .chat--title .chat--title-items .items--right .items--right-interaction a {
   font-weight: 600;
 }
 #chat .chat--title .chat--title-items .items--right .items--right-lightmode, #chat .chat--title .chat--title-items .items--right .items--right-darkmode {
@@ -83,9 +86,55 @@ body {
 #chat .chat--messages .chat--messages-single > strong {
   margin: 0;
 }
-#chat .chat--messages .chat--messages-single span {
-  padding: 1px 5px;
+#chat .chat--messages .chat--messages-single .single--dateTime {
+  font-size: 12px;
+  opacity: 0.4;
+}
+#chat .chat--messages .chat--messages-single .single--author {
+  margin: 0 0 0 6px;
+  padding: 2px 7.5px;
   border-radius: 3.5px;
+  font-weight: 600;
+  font-size: 12px;
+}
+#chat .chat--messages .chat--messages-single .single--message-notification {
+  font-size: 12px;
+  opacity: 0.4;
+}
+#chat .chat--suggestions {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+#chat .chat--suggestions::-webkit-scrollbar {
+  display: none;
+}
+#chat .chat--suggestions > * {
+  padding: 12px 20px;
+  margin: 15px 5px;
+}
+#chat .chat--suggestions span {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  font-size: 12px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: rgba(69, 69, 69, 0.1);
+  cursor: pointer;
+}
+#chat .chat--suggestions span:hover {
+  background-color: rgba(18, 18, 18, 0.5);
+}
+#chat .chat--suggestions span:active {
+  cursor: grabbing;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 #chat .chat--btn-submit {
   border-radius: 3.5px;
@@ -93,8 +142,8 @@ body {
 #chat .chat--footer {
   margin: 0;
   padding: 0;
-  font-size: 12px;
-  text-align: right;
+  font-size: 10px;
+  text-align: center;
   padding-top: 15px;
 }
 

@@ -34,12 +34,12 @@ io.on('connection', socket => {
     socket.emit('previousMessages', messages);
 
     socket.on('sendAuthor', data => {
-        var authorExists = authors.map(e => e.author).indexOf(data.author) >= 0;
+        let authorExists = authors.map(e => e.author).indexOf(data.author) >= 0;
         if (authorExists) {
             socket.emit('authorAlreadyInUse');
         }else{
-            var idPosition = authors.map(e => e.id).indexOf(data.id);
-            var idExists = idPosition >= 0;
+            let idPosition = authors.map(e => e.id).indexOf(data.id);
+            let idExists = idPosition >= 0;
             if (idExists) {
                 authors[idPosition].author = data.author;
             }else{
@@ -56,10 +56,18 @@ io.on('connection', socket => {
 
     socket.on("disconnect", reason => {
         console.log(`<Socket desconectado: ${socket.id} - ${reason}>`);
-
-        var idPosition = authors.map(e => e.id).indexOf(socket.id);
-        var idExists = idPosition >= 0;
-        if (idExists) {
+        let idPosition = authors.map(e => e.id).indexOf(socket.id);
+        let idExists = idPosition >= 0;
+        if (idExists) {  
+            let messageObject = {
+                dateTime: '00:01',
+                author: 'SERVER',
+                message: authors[idPosition].author+ ', se desconectou.',
+                notification: 1
+            };
+            console.log(messageObject);
+            messages.push(messageObject);
+            socket.broadcast.emit('sendNotification', messageObject);
             authors.splice(idPosition, 1);
         }
     });

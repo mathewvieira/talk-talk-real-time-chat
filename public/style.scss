@@ -56,8 +56,12 @@ body{
                 .items--right-interaction{
                     margin: 0;
                     padding: 5px 0 0 0;
-                    font-size: 9.5px; 
-                    font-weight: 600;
+                    font-size: 9.5px;
+                    font-weight: 500;
+
+                    a {
+                        font-weight: 600;
+                    }
                 }
                 
                 .items--right-lightmode,.items--right-darkmode{
@@ -71,7 +75,7 @@ body{
                     &:active{
                         cursor: default;
                     }
-                }              
+                }
             }
         }
     }
@@ -96,10 +100,66 @@ body{
                 margin: 0;
             }
 
-			span{
-                padding: 1px 5px; 
-                border-radius: 3.5px;
-            }           
+			.single--dateTime{
+                font-size: 12px;
+                opacity: 0.4;
+            }
+            
+            .single--author{
+                margin: 0 0 0 6px;
+                padding: 2px 7.5px;
+                border-radius: 3.5px; 
+                font-weight: 600;
+                font-size: 12px;
+            }
+
+            .single--message-notification{
+                font-size: 12px;
+                opacity: 0.4;
+            }
+        }
+    }
+
+    .chat--suggestions{
+        margin: 0;
+        padding: 0;
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        white-space: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        
+        scrollbar-width: none;  
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+        & > *{
+            padding: 12px 20px;
+            margin: 15px 5px;
+        }
+        
+        span{
+            border: 1px solid rgba(#ffffff, 0.2);
+            border-radius: 15px;
+            font-size: 12px;
+            user-select: none;
+
+            $color: #454545;
+            background-color: rgba($color, 0.1);
+            cursor: pointer;
+
+            &:hover{
+                background-color: rgba(darken($color, 20%), 0.5);
+            }
+
+            &:active{
+                cursor: grabbing;
+                background-color: rgba(darken($color, 50%), 0.8);
+            }
         }
     }
 
@@ -110,8 +170,8 @@ body{
     .chat--footer{
         margin: 0;
         padding: 0;
-        font-size: 12px;
-        text-align: right;        
+        font-size: 10px;
+        text-align: center;
         padding-top: 15px;
     }
 }
@@ -132,7 +192,7 @@ body{
             }
     
             .chat--messages-single{
-                font-size: 12px;          
+                font-size: 12px;
             }
         }
 
@@ -172,7 +232,7 @@ body{
             .chat--title-items{
                 margin-bottom: 35px;
                 
-                .items--right{          
+                .items--right{
                     .items--right-interaction{
                         line-height: 25px;
                     }

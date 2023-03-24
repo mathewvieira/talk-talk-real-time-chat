@@ -39,6 +39,18 @@
 body{
     background-color: var(--bg);
     color: var(--text);
+
+    &::-webkit-scrollbar{
+        background-color: var(--bg-scrollbar);
+        border-radius: 3.5px;
+        width: 7.5px;
+        height: 7.5px;
+    }
+    
+    &::-webkit-scrollbar-thumb{
+        background-color: var(--bg-scrollbar-thumb);
+        border-radius: 3.5px;
+    }
 }
 
 #chat{
@@ -111,15 +123,4 @@ body{
             }
         }
     }
-}
-
-::-webkit-scrollbar{
-    background-color: var(--bg-scrollbar);
-    border-radius: 3.5px;
-    width: 7.5px;
-    height: 7.5px;
-}
-::-webkit-scrollbar-thumb{
-    background-color: var(--bg-scrollbar-thumb);
-    border-radius: 3.5px;
 }
