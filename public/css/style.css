@@ -102,21 +102,20 @@ body {
   opacity: 0.4;
 }
 #chat .chat--suggestions {
-  margin: 0;
-  padding: 0;
+  margin: 0 0 7.5px 0;
+  padding: 0 0 2.5px 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
-  scrollbar-width: none;
 }
 #chat .chat--suggestions::-webkit-scrollbar {
-  display: none;
+  height: 3.5px;
 }
 #chat .chat--suggestions > * {
-  padding: 12px 20px;
+  padding: 10px 20px;
   margin: 15px 5px;
 }
 #chat .chat--suggestions span {

@@ -8,7 +8,7 @@
   --bg-btn-submit-hover: #131313;
   --bg-btn-submit-focus: #0A0A0A;
   --bg-scrollbar: #3e3e3e;
-  --bg-scrollbar-thumb: #838383;
+  --bg-scrollbar-thumb: #616161;
   --text: #ffffff;
   --text-secondary: #6c6c6c;
   --text-shadow: #1b1b1b;
@@ -36,69 +36,70 @@ body {
   background-color: var(--bg);
   color: var(--text);
 }
-body::-webkit-scrollbar {
+body #chat > input[type=text]:disabled {
+  color: var(--text-secondary);
+  cursor: no-drop;
+}
+body #chat .chat--messages, body #chat .chat--input-text {
+  background-color: var(--bg-input);
+  color: var(--text);
+  border: none;
+}
+body #chat .chat--btn-submit {
+  background-color: var(--bg-btn-submit);
+  color: var(--text);
+  border: none;
+}
+body #chat .chat--btn-submit:hover {
+  background-color: var(--bg-btn-submit-hover);
+  cursor: pointer;
+}
+body #chat .chat--btn-submit:focus {
+  background-color: var(--bg-btn-submit-focus);
+  cursor: crosshair;
+}
+body #chat .chat--messages-title {
+  color: var(--text-secondary);
+}
+body #chat .chat--footer {
+  color: var(--text-secondary);
+}
+body #chat .chat--messages-single {
+  color: var(--text);
+}
+body #chat .chat--messages-single span {
+  text-shadow: 0.7px 0.7px var(--text-shadow);
+  color: var(--text-username);
+}
+body #chat .items--right-lightmode {
+  color: var(--bg-icon-lightmode);
+}
+body #chat .items--right-darkmode {
+  color: var(--bg-icon-darkmode);
+}
+body #chat .items--left-call {
+  color: var(--text-secondary);
+}
+body #chat .items--right-interaction {
+  color: var(--text-secondary);
+}
+body #chat .items--right-interaction a {
+  color: var(--text);
+  cursor: pointer;
+  text-decoration: none;
+}
+body #chat .items--right-interaction a:hover {
+  color: var(--text-link-hover);
+}
+
+::-webkit-scrollbar {
   background-color: var(--bg-scrollbar);
   border-radius: 3.5px;
   width: 7.5px;
   height: 7.5px;
 }
-body::-webkit-scrollbar-thumb {
+
+::-webkit-scrollbar-thumb {
   background-color: var(--bg-scrollbar-thumb);
   border-radius: 3.5px;
-}
-
-#chat > input[type=text]:disabled {
-  color: var(--text-secondary);
-  cursor: no-drop;
-}
-#chat .chat--messages, #chat .chat--input-text {
-  background-color: var(--bg-input);
-  color: var(--text);
-  border: none;
-}
-#chat .chat--btn-submit {
-  background-color: var(--bg-btn-submit);
-  color: var(--text);
-  border: none;
-}
-#chat .chat--btn-submit:hover {
-  background-color: var(--bg-btn-submit-hover);
-  cursor: pointer;
-}
-#chat .chat--btn-submit:focus {
-  background-color: var(--bg-btn-submit-focus);
-  cursor: crosshair;
-}
-#chat .chat--messages-title {
-  color: var(--text-secondary);
-}
-#chat .chat--footer {
-  color: var(--text-secondary);
-}
-#chat .chat--messages-single {
-  color: var(--text);
-}
-#chat .chat--messages-single span {
-  text-shadow: 0.7px 0.7px var(--text-shadow);
-  color: var(--text-username);
-}
-#chat .items--right-lightmode {
-  color: var(--bg-icon-lightmode);
-}
-#chat .items--right-darkmode {
-  color: var(--bg-icon-darkmode);
-}
-#chat .items--left-call {
-  color: var(--text-secondary);
-}
-#chat .items--right-interaction {
-  color: var(--text-secondary);
-}
-#chat .items--right-interaction a {
-  color: var(--text);
-  cursor: pointer;
-  text-decoration: none;
-}
-#chat .items--right-interaction a:hover {
-  color: var(--text-link-hover);
 }/*# sourceMappingURL=themes.css.map */

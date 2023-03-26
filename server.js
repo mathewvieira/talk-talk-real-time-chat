@@ -21,7 +21,7 @@ app.use('/', (req, res) => {
     res.render('index.html');
 });
 
-const autoDeleteMessages = setInterval(function () {
+setInterval(function autoDeleteMessages() {
     messages = [];
     authors = [];
     io.emit('autoDeleteMessages');
@@ -60,9 +60,9 @@ io.on('connection', socket => {
         let idExists = idPosition >= 0;
         if (idExists) {  
             let messageObject = {
-                dateTime: '00:01',
+                dateTime: new Date(),
                 author: 'SERVER',
-                message: authors[idPosition].author+ ', se desconectou.',
+                message: '<'+authors[idPosition].author+'> se desconectou.',
                 notification: 1
             };
             console.log(messageObject);

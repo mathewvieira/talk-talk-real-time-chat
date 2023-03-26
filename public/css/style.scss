@@ -121,8 +121,8 @@ body{
     }
 
     .chat--suggestions{
-        margin: 0;
-        padding: 0;
+        margin: 0 0 7.5px 0;
+        padding: 0 0 2.5px 0;
         
         display: flex;
         flex-direction: row;
@@ -131,14 +131,13 @@ body{
         white-space: nowrap;
         overflow-x: scroll;
         overflow-y: hidden;
-        
-        scrollbar-width: none;  
+         
         &::-webkit-scrollbar{
-            display: none;
+            height: 3.5px;
         }
 
         & > *{
-            padding: 12px 20px;
+            padding: 10px 20px;
             margin: 15px 5px;
         }
         
