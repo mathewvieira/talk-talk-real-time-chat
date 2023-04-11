@@ -41,13 +41,6 @@ $(document).ready(() => {
     dotsAnimation();
 });
 
-$chat.keypress(event => {
-    let key = event.which;
-    if(key == 13){
-       return false;
-    }
-});
-
 $chat.submit(event => {
     event.preventDefault();
 
@@ -67,6 +60,18 @@ $chat.submit(event => {
         $inputMessage.val('');
     }
 });
+
+$chat.on('keydown', (e) => {
+    if(e.keyCode == 13){
+      return false;
+    }
+ });
+
+$inputMessage.on('keydown', (e) => {
+    if(e.keyCode == 13){
+      $chat.submit();
+    }
+ });
 
 $inputUsername.change(() => {
     let author = $inputUsername.val();
