@@ -36,7 +36,7 @@ socket.on('sendNotification', message => {
 });
 
 $(document).ready(() => {
-    addChatSuggestions(chatSuggestions);
+    addChatSuggestions(randomizeArray(chatSuggestions));
     initSuggestionsSlider();
     dotsAnimation();
 });

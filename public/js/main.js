@@ -18,9 +18,13 @@ const chatSuggestions = [
     '🌟🌟🌟',
     'tchau 👋',
     'vlw 👋'
-].sort(() => {
-    return Math.random() - 0.5;
-});
+];
+
+function randomizeArray(array){
+    return array.sort(() => {
+        return Math.random() - 0.5;
+    });
+}
 
 function setTheme(theme){
     document.documentElement.className = theme;
@@ -44,9 +48,9 @@ function renderMessage(message) {
 
     $messages.append(`
         <div class="chat--messages-single">
-            <span class="single--dateTime">[${escapeHtml(getOnlyTime(message.dateTime))}]</span>
+            <b class="single--dateTime">[${escapeHtml(getOnlyTime(message.dateTime))}]</b>
             <span class="single--author" ${style}>${escapeHtml(message.author)}</span>
-            <span class="single--message">: ${escapeHtml(message.message)}</span>
+            <b class="single--message">: ${escapeHtml(message.message)}</b>
         </div>
     `);
 }
@@ -54,8 +58,8 @@ function renderMessage(message) {
 function renderNotification(message) {
     $messages.append(`
         <div class="chat--messages-single">
-            <span class="single--dateTime">[${escapeHtml(getOnlyTime(message.dateTime))}]</span>
-            <span class="single--message-notification">${escapeHtml(message.message)}</span>
+            <b class="single--dateTime">[${escapeHtml(getOnlyTime(message.dateTime))}]</b>
+            <text class="single--message-notification">${escapeHtml(message.message)}</text>
         </div>
     `);
 }

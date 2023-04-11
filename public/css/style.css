@@ -119,21 +119,11 @@ body {
   margin: 15px 5px;
 }
 #chat .chat--suggestions span {
-  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   font-size: 12px;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  background-color: rgba(69, 69, 69, 0.1);
-  cursor: pointer;
-}
-#chat .chat--suggestions span:hover {
-  background-color: rgba(18, 18, 18, 0.5);
-}
-#chat .chat--suggestions span:active {
-  cursor: grabbing;
-  background-color: rgba(0, 0, 0, 0.8);
 }
 #chat .chat--btn-submit {
   border-radius: 3.5px;

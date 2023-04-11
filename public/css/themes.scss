@@ -4,12 +4,13 @@
     --bg-icon-darkmode:  #3a3ae6;
     
     --bg:                  #181818;
-    --bg-input:            #0A0A0A;
-    --bg-btn-submit:       #212121;
-    --bg-btn-submit-hover: #131313;
-    --bg-btn-submit-focus: #0A0A0A;
+    --bg-input:            #0A0A0A;   
+    --bg-btn:              #212121;
+    --bg-btn-hover:        #131313;
+    --bg-btn-focus:        #0A0A0A;
     --bg-scrollbar:        #3e3e3e;
     --bg-scrollbar-thumb:  #616161;
+    --bg-border:           #555555;
     
     --text:            #ffffff;
     --text-secondary:  #6c6c6c;
@@ -22,17 +23,18 @@
     --bg-icon-lightmode: #f5a510;
     
     --bg:                  #fcfcfc;
-    --bg-input:            #d4d4d4; 
-    --bg-btn-submit:       #b3b3b3;
-    --bg-btn-submit-hover: #cecece;
-    --bg-btn-submit-focus: #d4d4d4; 
-    --bg-scrollbar:        #212121;
-    --bg-scrollbar-thumb:  #a9a9a9;
+    --bg-input:            #d4d4d4;
+    --bg-btn:              #cecece;
+    --bg-btn-hover:        #cecece;
+    --bg-btn-focus:        #d4d4d4; 
+    --bg-scrollbar:        #d3d3d3;
+    --bg-scrollbar-thumb:  #848484;
+    --bg-border:           #818181;
       
-    --text:            #3b3b3b;
-    --text-secondary:  #1b1b1b;
-    --text-shadow:     #1b1b1b; 
-    --text-link-hover: #a1a1a1;
+    --text:            #1d1d1d;
+    --text-secondary:  #1a1a1a;
+    --text-shadow:     #000000; 
+    --text-link-hover: #979797;
     --text-username:   #ffffff;
 }
 
@@ -53,17 +55,17 @@ body{
         }
         
         .chat--btn-submit{
-            background-color: var(--bg-btn-submit);
+            background-color: var(--bg-btn);
             color: var(--text);
             border: none;
     
             &:hover{
-                background-color: var(--bg-btn-submit-hover);
+                background-color: var(--bg-btn-hover);
                 cursor: pointer;
             }
     
             &:focus{
-                background-color: var(--bg-btn-submit-focus);
+                background-color: var(--bg-btn-focus);
                 cursor: crosshair;
             }
         }
@@ -82,6 +84,23 @@ body{
             span{
                 text-shadow: 0.7px 0.7px var(--text-shadow);
                 color: var(--text-username);
+            }
+        }
+
+        .chat--suggestions{
+            span{ 
+                background-color: var(--bg-btn);
+                border: 1px solid var(--bg-border);
+                cursor: pointer;
+
+                &:hover{
+                    background-color: var(--bg-btn-hover);
+                }
+    
+                &:active{
+                    cursor: grabbing;
+                    background-color: var(--bg-btn-focus);
+                }
             }
         }
         

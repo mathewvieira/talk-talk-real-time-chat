@@ -142,23 +142,9 @@ body{
         }
         
         span{
-            border: 1px solid rgba(#ffffff, 0.2);
             border-radius: 15px;
             font-size: 12px;
             user-select: none;
-
-            $color: #454545;
-            background-color: rgba($color, 0.1);
-            cursor: pointer;
-
-            &:hover{
-                background-color: rgba(darken($color, 20%), 0.5);
-            }
-
-            &:active{
-                cursor: grabbing;
-                background-color: rgba(darken($color, 50%), 0.8);
-            }
         }
     }
 

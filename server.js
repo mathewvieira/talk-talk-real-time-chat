@@ -58,14 +58,13 @@ io.on('connection', socket => {
         console.log(`<Socket desconectado: ${socket.id} - ${reason}>`);
         let idPosition = authors.map(e => e.id).indexOf(socket.id);
         let idExists = idPosition >= 0;
-        if (idExists) {  
+        if (idExists) {
             let messageObject = {
                 dateTime: new Date(),
                 author: 'SERVER',
                 message: '<'+authors[idPosition].author+'> se desconectou.',
                 notification: 1
             };
-            console.log(messageObject);
             messages.push(messageObject);
             socket.broadcast.emit('sendNotification', messageObject);
             authors.splice(idPosition, 1);
